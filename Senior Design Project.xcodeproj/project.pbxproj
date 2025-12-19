@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		178729432EF6171A0057AA50 /* SmartAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178729412EF617150057AA50 /* SmartAlarmViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		178729412EF617150057AA50 /* SmartAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartAlarmViewModel.swift; sourceTree = "<group>"; };
 		A757CA332EF4D2830051F59F /* Senior Design Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Senior Design Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -29,9 +34,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		178729462EF6172F0057AA50 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				178729412EF617150057AA50 /* SmartAlarmViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		A757CA2A2EF4D2830051F59F = {
 			isa = PBXGroup;
 			children = (
+				178729462EF6172F0057AA50 /* ViewModels */,
 				A757CA352EF4D2830051F59F /* Senior Design Project */,
 				A757CA342EF4D2830051F59F /* Products */,
 			);
@@ -119,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178729432EF6171A0057AA50 /* SmartAlarmViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

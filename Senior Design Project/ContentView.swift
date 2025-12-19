@@ -9,13 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            HealthView()
+                .tabItem {
+                    Label("Health", systemImage: "heart")
+                }
+            SettingsView()
+                .tabItem{
+                    Label("Settings", systemImage: "gear")
+                }
         }
-        .padding()
+    }
+}
+
+// TODO: Move to HealthView.swift
+struct HealthView: View {
+    var body: some View {
+        Text("Health")
+    }
+}
+
+// TODO: Move to SettingsView.swift
+struct SettingsView: View {
+    var body: some View {
+        Text("Settings")
     }
 }
 
