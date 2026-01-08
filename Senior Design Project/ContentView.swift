@@ -1,8 +1,9 @@
 //
 //  ContentView.swift
-//  Senior Design Project
+//  Senior Design Project - SleepFocus
 //
 //  Created by Erik Keifer on 12/18/25.
+//  Project By: Erik Keifer, Austin Kim & Isaac Amedie
 //
 
 import SwiftUI
