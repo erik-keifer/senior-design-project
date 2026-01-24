@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject private var healthAuth: HealthAuth
+
     var body: some View {
         Form {
             Section(header: Text("Account")) {
@@ -16,6 +18,18 @@ struct SettingsView: View {
                     Spacer()
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.secondary)
+                }
+
+                Button(
+                    healthAuth.isAuthorized
+                        ? "Disconnect from Apple HealthKit"
+                        : "Connect to Apple HealthKit"
+                ) {
+                    if healthAuth.isAuthorized {
+                        healthAuth.disconnect()
+                    } else {
+                        Task { await healthAuth.connect() }
+                    }
                 }
             }
 
@@ -38,7 +52,6 @@ struct SettingsView: View {
 
 #Preview {
     NavigationStack {
-        SettingsView()
+        SettingsView().environmentObject(HealthAuth())
     }
 }
-

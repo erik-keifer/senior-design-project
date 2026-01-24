@@ -2,9 +2,11 @@ import SwiftUI
 
 @main
 struct DesignApp: App {
+    @StateObject private var healthAuth = HealthAuth()
+    
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView().environmentObject(healthAuth)
         }
     }
 }
