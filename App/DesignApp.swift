@@ -6,7 +6,11 @@ struct DesignApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView().environmentObject(healthAuth)
+            RootView()
+                .environmentObject(healthAuth)
+                .task {
+                    await healthAuth.refreshAuthStatus()
+                }
         }
     }
 }

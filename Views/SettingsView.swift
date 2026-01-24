@@ -19,11 +19,11 @@ struct SettingsView: View {
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.secondary)
                 }
-
+                
                 Button(
                     healthAuth.isAuthorized
-                        ? "Disconnect from Apple HealthKit"
-                        : "Connect to Apple HealthKit"
+                        ? "Disconnect Apple HealthKit"
+                        : "Connect Apple HealthKit"
                 ) {
                     if healthAuth.isAuthorized {
                         healthAuth.disconnect()
@@ -37,6 +37,17 @@ struct SettingsView: View {
                 Toggle("Dark Mode", isOn: .constant(false))
                 Toggle("Sounds", isOn: .constant(true))
             }
+            
+            #if DEBUG
+                Section(header: Text("Developer")) {
+                    NavigationLink("Upload Raw HealthKit Data") {
+                        DeveloperUploadView(
+                            repo: HealthDataRepository(),
+                            api: SleepFocusAPI()
+                        )
+                    }
+                }
+            #endif
 
             Section {
                 Button(role: .destructive) {
